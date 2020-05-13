@@ -1,7 +1,4 @@
 import pygame
-from pygame.locals import *
-import Colors
-from Window import Window
 
 
 class Player:
@@ -11,7 +8,7 @@ class Player:
         self.width = width
         self.height = height
         self.vel = vel
-        self.imagen = pygame.image.load("i_p.png")
+        self.imagen = pygame.image.load("images/nave.png")
 
     def cargar_img(self, pantalla):
         pantalla.blit(self.imagen, (self.pos_x - 50, self.pos_y - 50))

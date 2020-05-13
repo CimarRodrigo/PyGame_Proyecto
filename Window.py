@@ -1,15 +1,19 @@
 import pygame
-import Colors
 
 
 class Window:
+    window_width = 800
+    window_height = 600
+    background = pygame.image.load("images/background.png")
 
-    def __init__(self, window_width, window_height):
-        self.window_width = window_width
-        self.window_height = window_height
+    @classmethod
+    def window_size(cls):
+        return (cls.window_width, cls.window_height)
 
-    def window_size(self):
-        return (self.window_width, self.window_height)
+    @classmethod
+    def main_window(cls):
+        return pygame.display.set_mode(cls.window_size())
 
-    def main_window(self):
-        return pygame.display.set_mode(self.window_size())
+    @staticmethod
+    def cargar_image(window):
+        window.blit(Window.background, (0, 0))
